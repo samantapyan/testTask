@@ -1,24 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import {useSelector, useDispatch} from "react-redux";
+import { Route, Routes} from "react-router-dom";
+import routes from './routes'
+import { ThemeProvider} from "@mui/material/styles";
+import Button from '@mui/material/Button';
+import {AppTheme} from "./AppTheme";
 
 function App() {
+  const  store = useSelector(store => store)
+  const dispatch = useDispatch()
+  console.log(store);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <ThemeProvider theme={AppTheme}>
+          <div className="App">
+              <Routes>
+                  {routes.map((route, ind) => (
+                      <Route {...route} key={ind}/>
+                  ))}
+              </Routes>
+          </div>
+      </ThemeProvider>
   );
 }
 
