@@ -1,14 +1,13 @@
-import  {takeLatest} from 'redux-saga/effects'
-import {handleGetUser} from "./handlers/user";
-import {GET_USER} from './../reducers/userReducer'
+import  {takeLatest, takeEvery} from 'redux-saga/effects'
+import {handleAddTextBlock, handleGetTextBlocks, handleUpdateTextBlock} from "./handlers/textBlocks";
+import {ADD_TEXT_BLOCK, GET_TEXT_BLOCKS, UPDATE_TEXT_BLOCK} from './../reducers/textBlocksReducer'
 
-export function* workerSaga() {
-
-}
 
 export function* watcherSaga() {
-    // yield takeLatest(GET_USER, handleGetUser)
-    console.log("click saga!")
+    yield takeLatest(ADD_TEXT_BLOCK, handleAddTextBlock)
+    yield takeLatest(GET_TEXT_BLOCKS, handleGetTextBlocks)
+    yield takeEvery(UPDATE_TEXT_BLOCK, handleUpdateTextBlock )
+
 }
 
 export default function* rootSaga() {

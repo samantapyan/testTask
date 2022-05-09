@@ -14,7 +14,6 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-
 function CheckedFields(props) {
     const classes = useStyles();
     const {
