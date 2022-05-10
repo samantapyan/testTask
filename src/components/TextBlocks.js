@@ -6,7 +6,7 @@ import firebase from './../services/firebase'
 import * as React from "react";
 import { DragDropContext } from "react-beautiful-dnd";
 import { reorderTextBlocks } from "./Reorder";
-import { AuthorList } from "./AuthorList";
+import { TextBlocksList } from "./TextBlocksList";
 
 
 const CreateText = ({changeEditorValue}) => {
@@ -117,7 +117,7 @@ const CreateText = ({changeEditorValue}) => {
                 <div style={{width: '100%'}}>
                     {Object.entries(tBlocks).map(([k, v]) => (
                         k &&(
-                            <AuthorList
+                            <TextBlocksList
                                 deleteTextBlock={deleteTextBlock}
                                 editTextBlock={editTextBlock}
                                 internalScroll

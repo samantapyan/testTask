@@ -115,7 +115,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export const AuthorList = ({ listId, listType, tBlocks, deleteTextBlock, editTextBlock }) => {
+export const TextBlocksList = ({ listId, listType, tBlocks, deleteTextBlock, editTextBlock }) => {
     const classes = useStyles();
 
     return (
